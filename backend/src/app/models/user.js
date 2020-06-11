@@ -9,15 +9,14 @@ let userSchema = new mongoose.Schema({
     updated_at: { type: Date, default: Date.now }
 });
 
-//middleware para transformar password em hash
 userSchema.pre('save', function (next) {
     if (this.isNew || this.isModified('password')) {
-        bcrypt.hash(this.password, 10, 
+        bcrypt.hash(this.password, 10,
             (err, hashedPassword) => {
-                if (err) {
-                    next(err);
-                } else {
-                    this.Password = hashedPassword;
+                if(err)
+                    next(err)
+                else {
+                    this.password = hashedPassword;
                     next();
                 }
             }
@@ -25,12 +24,11 @@ userSchema.pre('save', function (next) {
     }
 });
 
-//verificar se o password está correto
 userSchema.methods.isCorrectPassword = function (password, callback) {
     bcrypt.compare(password, this.password, function (err, same) {
-        if (err) {
+        if(err) {
             callback(err);
-        } else {
+        } else { 
             callback(err, same);
         }
     });
