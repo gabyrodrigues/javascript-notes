@@ -8,6 +8,9 @@ require('dotenv').config();
 
 const secret = process.env.JWT_TOKEN;
 
+const withAuth = require('../middlewares/auth');
+
+//cadastro
 router.post('/register', async (request, response) => {
     const { name, email, password } = request.body;
     const user = new User({ name, email, password });
@@ -20,6 +23,7 @@ router.post('/register', async (request, response) => {
     }
 });
 
+//login
 router.post('/login', async (request, response) => {
     const { email, password } = request.body;
 
@@ -39,6 +43,23 @@ router.post('/login', async (request, response) => {
                 }
             });
         }
+    } catch (error) {
+        return response.status(500).json({ error: "Internal error. Please, try again." })
+    }
+});
+
+//alterando dados da conta
+router.put('/', withAuth, async (request, response) => {
+    const { name, email } = request.body;
+
+    try {
+        let user = await User.findOneAndUpdate(
+            { _id: request.user._id },
+            { $set: { name: name, email: email } },
+            { useFindAndModify: false, upsert: true, 'new': true }
+        );
+
+        return response.status(200).json(user);
     } catch (error) {
         return response.status(500).json({ error: "Internal error. Please, try again." })
     }
