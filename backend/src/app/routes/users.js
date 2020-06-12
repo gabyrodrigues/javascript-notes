@@ -90,8 +90,6 @@ router.delete('/', withAuth, async (request, response) => {
             { useFindAndModify: false }
         );
 
-        await user.delete();
-
         return response.json({ message: "User successfully deleted!" }).status(200);
     } catch (error) {
         return response.status(500).json({ error: "Internal error. Please, try again." });
