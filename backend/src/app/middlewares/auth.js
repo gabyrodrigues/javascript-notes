@@ -6,14 +6,14 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 const withAuth = (request, response, next) => {
-    const token = req.headers['x-access-token'];
+    const token = request.headers['x-access-token'];
 
     if (!token) {
-        response.status(401).json({ error: "Unauthorized: no token provided."});
+        return response.status(401).json({ error: "Unauthorized: no valid token provided."});
     } else {
         jwt.verify(token, secret, (err, decoded) => {
             if (err) {
-                response.status(401).json({ error: "Unauthorized: Invalid token." });
+                return response.status(401).json({ error: "Unauthorized: invalid token." });
             } else {
                 request.email = decoded.email;
 
@@ -22,7 +22,7 @@ const withAuth = (request, response, next) => {
                     request.user = user;
                     next();
                 }).catch(err => {
-                    response.status(401).send(err);
+                    return response.status(401).send({ error: err });
                 })
             }
         });

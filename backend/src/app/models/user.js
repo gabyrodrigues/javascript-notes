@@ -13,9 +13,9 @@ userSchema.pre('save', function (next) {
     if (this.isNew || this.isModified('password')) {
         bcrypt.hash(this.password, 10,
             (err, hashedPassword) => {
-                if(err)
+                if (err) {
                     next(err)
-                else {
+                } else {
                     this.password = hashedPassword;
                     next();
                 }
@@ -24,9 +24,10 @@ userSchema.pre('save', function (next) {
     }
 });
 
+//verifica se a senha inserida está correta
 userSchema.methods.isCorrectPassword = function (password, callback) {
     bcrypt.compare(password, this.password, function (err, same) {
-        if(err) {
+        if (err) {
             callback(err);
         } else { 
             callback(err, same);
