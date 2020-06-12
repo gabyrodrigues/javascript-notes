@@ -44,11 +44,11 @@ router.post('/login', async (request, response) => {
             });
         }
     } catch (error) {
-        return response.status(500).json({ error: "Internal error. Please, try again." })
+        return response.status(500).json({ error: "Internal error. Please, try again." });
     }
 });
 
-//alterando dados da conta
+//alterar dados da conta
 router.put('/', withAuth, async (request, response) => {
     const { name, email } = request.body;
 
@@ -61,10 +61,11 @@ router.put('/', withAuth, async (request, response) => {
 
         return response.status(200).json(user);
     } catch (error) {
-        return response.status(500).json({ error: "Internal error. Please, try again." })
+        return response.status(500).json({ error: "Internal error. Please, try again." });
     }
 });
 
+//alterar senha
 router.put('/password', withAuth, async (request, response) => {
     const { password } = request.body;
 
@@ -76,7 +77,24 @@ router.put('/password', withAuth, async (request, response) => {
         
         return response.status(200).json(user);
     } catch (error) {
-        return response.status(500).json({ error: "Internal error. Please, try again." })
+        return response.status(500).json({ error: "Internal error. Please, try again." });
+    }
+});
+
+//deletar conta
+router.delete('/', withAuth, async (request, response) => {
+
+    try {
+        let user = await User.findOneAndRemove(
+            { _id: request.user._id },
+            { useFindAndModify: false }
+        );
+
+        await user.delete();
+
+        return response.json({ message: "User successfully deleted!" }).status(200);
+    } catch (error) {
+        return response.status(500).json({ error: "Internal error. Please, try again." });
     }
 });
 
