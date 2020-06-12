@@ -65,4 +65,19 @@ router.put('/', withAuth, async (request, response) => {
     }
 });
 
+router.put('/password', withAuth, async (request, response) => {
+    const { password } = request.body;
+
+    try {
+        let user = await User.findOne( { _id: request.user._id } );
+
+        user.password = password;
+        user.save();
+        
+        return response.status(200).json(user);
+    } catch (error) {
+        return response.status(500).json({ error: "Internal error. Please, try again." })
+    }
+});
+
 module.exports = router;
