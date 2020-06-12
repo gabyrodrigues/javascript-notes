@@ -18,6 +18,22 @@ router.post('/', withAuth, async (request, response) => {
     }
 });
 
+//buscando notas
+router.get('/search', withAuth, async (request, response) => {
+    const { query } = request.query;
+    console.log(request.user._id);
+
+    try {
+        let notes = await Note
+            .find({ author: request.user._id })
+            .find({ $text: { $search: query } }); //associa os campos da coleção como texto
+
+        return response.json(notes);                            
+    } catch (error) {
+        return response.status(500).json({ error: error });
+    }
+});
+
 //exibir nota
 router.get('/:id', withAuth, async (request, response) => {
     const { id } = request.params;
