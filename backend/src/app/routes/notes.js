@@ -36,6 +36,35 @@ router.get('/:id', withAuth, async (request, response) => {
     }
 });
 
+//listando notas
+router.get('/', withAuth, async (request, response) => {
+    try {
+        let notes = await Note.find({ author: request.user._id });
+
+        return response.status(200).json(notes);
+    } catch (error) {
+        return response.status(500).json({ error: "Error listing notes. Try again." });
+    }
+});
+
+//atualizando nota
+router.put('/:id', withAuth, async (request, response) => {
+    const { id } = request.params;
+    const { title, body } = request.body;
+
+    try {
+        let note = await Note.findOneAndUpdate(
+            { _id: id },
+            { $set: { title: title, body: body } },
+            { upsert: true, 'new': true }
+        );
+
+        return response.status(200).json(note);
+    } catch (error) {
+        return response.status(500).json({ error: "Error updating note. Try again." });
+    }
+});
+
 //verificar se o usuário é o dono da nota
 const isOwner = (user, note) => {
     if(JSON.stringify(user._id) == JSON.stringify(note.author._id)) {
