@@ -65,6 +65,26 @@ router.put('/:id', withAuth, async (request, response) => {
     }
 });
 
+//deletando nota
+router.delete('/:id', withAuth, async (request, response) => {
+    const { id } = request.params;
+
+    try {
+        let note = await Note.findById(id);
+
+        if(note && isOwner(request.user, note)) {
+            await note.delete();
+
+            return response.json({ message: "Note successfully deleted!" }).status(204);
+        } else {
+            return response.status(403).json({ error: "Permission denied. You are not the note owner."});
+        }
+
+    } catch (error) {
+        return response.status(500).json({ error: "Error deleting note. Try again." });
+    }
+});
+
 //verificar se o usuário é o dono da nota
 const isOwner = (user, note) => {
     if(JSON.stringify(user._id) == JSON.stringify(note.author._id)) {
