@@ -1,12 +1,22 @@
 import React from 'react';
-import './App.scss';
 
 import Routes from './routes';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
-  return (
-    <Routes />
-  );
+import GlobalStyle from './styles/global';
+
+import Header from './components/Header';
+
+const App = () => {
+    return (
+        <>
+            <BrowserRouter>
+                <Header />
+                <Routes />
+                <GlobalStyle />
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;
