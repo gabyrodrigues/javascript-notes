@@ -10,7 +10,6 @@ const Header = () => {
 
 	function handleToggleActive () {
 		setActive(!active);
-		console.log("Oi")
 	}
 
     return (

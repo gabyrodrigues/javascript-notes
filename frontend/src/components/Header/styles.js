@@ -14,11 +14,22 @@ export const Container  = styled.div`
     display: flex;
     flex-grow: 0;
     justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px 40px;
     position: relative;
     width: 100%;
 
     @media (max-width: 768px) {
         display: block;
+        padding: 10px 20px;
+    }
+
+    @media (min-width: 1025px) {
+        max-width: 1150px;
+    }
+
+    @media (min-width: 1440px) {
+        max-width: 1290px;
     }
 `;
 
@@ -26,7 +37,6 @@ export const Info = styled.div`
     align-items: center;
     display: flex;
     flex-shrink: 0;
-    padding: 10px 20px;
 `;
 
 export const Logo = styled.img`
@@ -36,12 +46,12 @@ export const Logo = styled.img`
 
 export const Menu = styled.div`
     display: flex;
-    padding: 10px 20px;
 
     @media (max-width: 768px) {
         background-color: #fff;
         box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
         display: ${props => (props.active ? 'block' : 'none')};
+        margin: 0 -40px;
         padding: 10px;
     }
 `;

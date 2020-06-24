@@ -6,7 +6,7 @@ export default function RouterWrapper ({
     isPrivate = false, 
     ...rest 
 }) {
-    const signed = true;
+    const signed = false;
 
     return ( 
         <Route 
