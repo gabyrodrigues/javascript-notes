@@ -56,3 +56,7 @@ export const Button = styled.button`
         color: #fff;
     }
 `;
+
+export const Help = styled.p`
+
+`;
