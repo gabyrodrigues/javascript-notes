@@ -56,3 +56,9 @@ export const Button = styled.button`
         color: #fff;
     }
 `;
+
+export const Help = styled.p`
+    color: #f14668;
+    font-size: 14px;
+    margin-top: 10px;
+`;
