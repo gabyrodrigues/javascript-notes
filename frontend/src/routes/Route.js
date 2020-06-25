@@ -6,7 +6,7 @@ export default function RouterWrapper ({
     isPrivate = false, 
     ...rest 
 }) {
-    const signed = false;
+    const signed = localStorage.getItem('user');
 
     return ( 
         <Route 

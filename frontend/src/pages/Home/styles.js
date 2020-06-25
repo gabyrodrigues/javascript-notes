@@ -63,7 +63,7 @@ export const Img = styled.img`
 
 export const Section = styled.section`
     background-color: #694ED8;
-    height: 100%;
+    height: calc(100% - 70px);
 `;
 
 export const Subtitle = styled.p`

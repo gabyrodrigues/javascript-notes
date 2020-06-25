@@ -51,14 +51,14 @@ export const Menu = styled.div`
         background-color: #fff;
         box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
         display: ${props => (props.active ? 'block' : 'none')};
-        margin: 0 -40px;
+        margin: 0 -20px;
         padding: 10px;
     }
 `;
 
 export const Item = styled.div`
     display: flex;
-    padding: 10px;
+    padding: 0 10px;
 
     a {
         border: 1px solid transparent;
