@@ -1,26 +1,31 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const LinkButton = styled(Link)`
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-flex;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+`;
 
 export const Column = styled.div`
+    align-items: flex-start; 
+    display: flex;
     flex-basis: 50%;
-
-    a {
-        background-color: transparent;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        color: #fff;
-        display: inline-flex;
-        font-size: 22px;
-        font-weight: 700;
-        margin-top: 40px;
-        padding: 15px;
-        text-align: center;
-        text-decoration: none;
-
-        &:hover {
-            background-color: #fff;
-            color: #000;
-        }
-    }
+    flex-direction: column;
+    justify-content: center;
 
     @media (max-width: 768px) {
         flex-basis: 100%;
@@ -33,37 +38,9 @@ export const Column = styled.div`
     }
 `;
 
-export const Container = styled.div`
-    display: flex;
-    flex-grow: 1;
-    height: 100%;
-    margin: 0 auto;
-    padding: 40px;
-    position: relative;
-    width: auto;
-
-    @media (max-width: 768px) {
-        padding: 40px 20px;
-        flex-direction: column;
-    }
-
-    @media (min-width: 1025px) {
-        max-width: 1150px;
-    }
-
-    @media (min-width: 1440px) {
-        max-width: 1290px;
-    }
-`;
-
 export const Img = styled.img`
     height: auto;
     max-width: 100%;
-`;
-
-export const Section = styled.section`
-    background-color: #694ED8;
-    height: calc(100% - 70px);
 `;
 
 export const Subtitle = styled.p`

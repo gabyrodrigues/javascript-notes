@@ -2,32 +2,19 @@ import React from 'react';
 
 import Header from '../../../components/Header';
 import RegisterForm from '../../../components/Auth/RegisterForm';
+import Container from '../../../components/Container';
 
-import { Card, Container, Content, Description, Img, ImgContainer, Section } from './styles';
-
-import logo from '../../../assets/images/logo.png';
+import CardForm from '../../../components/Auth/CardForm';
 
 const Register = () => {
     return (
         <>
             <Header />
-            <Section>
-                <Container>
-                    <Card>
-                        <Content>
-                            <ImgContainer>
-                                <Img src={logo} />
-                            </ImgContainer>
-                            
-                            <Description>
-                                Your notes on the cloud
-                            </Description>
-
-                            <RegisterForm />
-                        </Content>
-                    </Card>
-                </Container>
-            </Section>
+            <Container>
+                <CardForm>
+                    <RegisterForm />
+                </CardForm>
+            </Container>
         </>
     );
 }

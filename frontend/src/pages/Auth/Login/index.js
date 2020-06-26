@@ -2,32 +2,19 @@ import React from 'react';
 
 import Header from '../../../components/Header';
 import LoginForm from '../../../components/Auth/LoginForm';
+import Container from '../../../components/Container';
 
-import { Card, Container, Content, Description, Img, ImgContainer, Section } from './styles';
-
-import logo from '../../../assets/images/logo.png';
+import CardForm from '../../../components/Auth/CardForm';
 
 const Login = () => {
     return (
         <>
             <Header />
-            <Section>
-                <Container>
-                    <Card>
-                        <Content>
-                            <ImgContainer>
-                                <Img src={logo} />
-                            </ImgContainer>
-                            
-                            <Description>
-                                Your notes on the cloud
-                            </Description>
-
-                            <LoginForm />
-                        </Content>
-                    </Card>
-                </Container>
-            </Section>
+            <Container>
+                <CardForm>
+                    <LoginForm />
+                </CardForm>
+            </Container>
         </>
     );
 }

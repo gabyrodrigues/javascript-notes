@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { Actions, Button, Field, Form, Help, Input, Label  } from './styles';
+import { Actions, Field, Form, Help, Input, Label  } from './styles';
+
+import { Button } from '../../../components/Button';
 
 import UsersService from '../../../services/users';
 
