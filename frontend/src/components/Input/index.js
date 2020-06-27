@@ -2,16 +2,16 @@ import React from 'react';
 
 import * as S from './styles';
 
-const Input = ({ props, ...rest }) => {
+const Input = ({ name, fontSize, id, label, onChange, value, type, ...rest }) => {
     return (
         <S.Field>
-            <S.Label htmlFor={props.htmlFor} fontSize={props.fontSize}>{props.label}</S.Label>
+            <S.Label htmlFor={name} fontSize={fontSize}>{label}</S.Label>
             <S.Input 
-                type={props.type}
-                id={props.id}
-                name={props.name}
-                value={props.value}
-                onChange={props.onChange()}
+                type={type}
+                id={id}
+                name={name}
+                value={value}
+                onChange={onChange}
                 {...rest}
             />
         </S.Field>

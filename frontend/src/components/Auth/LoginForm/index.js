@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { Actions, Form, Help  } from './styles';
+import { Actions, Form, Help } from './styles';
 
 import { Button } from '../../../components/Button';
 import Input from '../../../components/Input';
