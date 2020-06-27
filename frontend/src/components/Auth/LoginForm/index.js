@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { Actions, Field, Form, Help, Input, Label  } from './styles';
+import { Actions, Form, Help  } from './styles';
 
 import { Button } from '../../../components/Button';
+import Input from '../../../components/Input';
 
 import UsersService from '../../../services/users';
 
@@ -27,29 +28,29 @@ const LoginForm = () => {
 
     return (
         <Form onSubmit={HandleSubmit}>
-            <Field>
-                <Label htmlFor="email">Email:</Label>
-                <Input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required="required" 
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
-            </Field>
+            <Input 
+                label="Email: "
+                fontSize={14}
+                htmlFor="email"
+                type="email"
+                id="email"
+                name="email"
+                required="required"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+            />
 
-            <Field>
-                <Label htmlFor="password">Password:</Label>
-                <Input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    required="required" 
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                />
-            </Field>
+            <Input 
+                label="Password: "
+                fontSize={14}
+                htmlFor="password"
+                type="password"
+                id="password"
+                name="password"
+                required="required"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+            />
 
             <Actions>
                 <Link to="/register">Register or</Link>
