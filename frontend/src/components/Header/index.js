@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/images/logo.png';
 
-import { Burger, Container, Logo, Info, Item, Menu, Navbar} from './styles';
+import { Burger, Container, LinkButton, Logo, Info, Item, Menu, Navbar} from './styles';
 
 const Header = () => {
 	const [active, setActive] = useState(false);
@@ -33,10 +33,10 @@ const Header = () => {
 
 				<Menu id="navbar-menu" active={active}>
                     <Item>
-                        <Link to="/register">Register</Link>
+                        <LinkButton to="/register">Register</LinkButton>
                     </Item>
                     <Item>
-                        <Link to="/login" className="outlined">Login</Link>
+                        <LinkButton to="/login" className="outlined">Login</LinkButton>
                     </Item>
 				</Menu>
 			</Container>

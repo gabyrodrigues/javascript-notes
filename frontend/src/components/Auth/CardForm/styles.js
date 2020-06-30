@@ -10,10 +10,6 @@ export const Card = styled.div`
     @media (max-width: 768px) {
         max-width: 100%;
     }
-
-    @media (min-width: 1025px) {
-        max-width: 400px;
-    }
 `;
 
 export const Content = styled.div`

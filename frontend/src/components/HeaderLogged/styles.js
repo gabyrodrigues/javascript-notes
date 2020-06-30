@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Navbar = styled.nav`
     align-items: center;
-    background-color: #fff;
+    background-color: #694ed8;
     display: block;
     max-height: 70px;
     position: relative;
@@ -16,13 +17,12 @@ export const Container  = styled.div`
     flex-grow: 0;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 10px 40px;
+    padding: 10px 20px;
     position: relative;
     width: 100%;
 
     @media (max-width: 768px) {
         display: block;
-        padding: 10px 20px;
     }
 
     @media (min-width: 1025px) {
@@ -47,9 +47,12 @@ export const Logo = styled.img`
 
 export const Menu = styled.div`
     display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 0 20px;
 
     @media (max-width: 768px) {
-        background-color: #fff;
+        background-color: #694ed8;
         box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
         display: ${props => (props.active ? 'block' : 'none')};
         margin: 0 -20px;
@@ -65,7 +68,7 @@ export const Item = styled.div`
 export const LinkButton = styled(Link)`
     border: 1px solid transparent;
     border-radius: 5px;
-    color: #694ED8;
+    color: #fff;
     font-size: 16px;
     padding: 10px;
     text-decoration: none;
@@ -75,13 +78,55 @@ export const LinkButton = styled(Link)`
     }
 
     &.outlined {
-        border-color: #694ed8;
+        border-color: #fff;
 
         &:hover {
-            background-color: #694ed8;
-            color: #fff;
+            background-color: #fff;
+            color: #694ED8;
         }
     }
+`;
+
+export const FAAngleIcon = styled(FontAwesomeIcon)`
+    margin-left: 5px;
+`;
+
+export const Dropdown = styled.div`
+    position: relative;  
+`;
+
+export const DropDivider = styled.hr`
+    background-color: #ededed;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 0.5rem 0;
+`;
+
+export const DropItem = styled.div`
+    display: flex;
+    padding: 10px;
+`;
+
+export const DropLink = styled(Link)`
+    color: #3273dc;
+    font-size: 14px;
+    text-decoration: none;
+
+    &:hover {
+        color: #363636;
+    }
+`;
+
+export const DropMenu = styled.div`
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+    display: ${props => (props.dropdownVisible ? 'block' : 'none') };
+    min-width: 150px;
+    padding: 10px 0;
+    position: absolute;
+    top: calc(100% + 15px);
 `;
 
 export const Burger = styled.div`
@@ -93,7 +138,7 @@ export const Burger = styled.div`
     width: 30px;
 
     span {
-        background-color: #000;
+        background-color: #fff;
         display: block;
         height: 1px;
         left: calc(50% - 8px);
