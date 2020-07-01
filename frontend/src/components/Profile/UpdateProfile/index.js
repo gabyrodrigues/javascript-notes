@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import Input from '../../../components/Input';
 import { Button } from '../../../components/Button';
@@ -26,8 +27,9 @@ const UpdateProfile = () => {
 
         try {
             await UsersService.update({ name: name, email: email });
+            toast.success("Profile updated successfully!");
         } catch (error){
-            alert(error);
+            toast.error("An error has occurred. Please, try again.");
         }
         
     }

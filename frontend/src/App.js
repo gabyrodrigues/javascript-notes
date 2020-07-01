@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 
 import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,6 +12,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes />
                 <GlobalStyle />
+                <ToastContainer autoClose={3000} />
             </BrowserRouter>
         </>
     );

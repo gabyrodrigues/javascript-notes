@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { Control, Delete } from './styles';
 
@@ -15,7 +16,7 @@ const DeleteAccount = () => {
                 history.push('/');
             }
         } catch (error) {
-            alert(error);
+            toast.error("An error has occurred. Please, try again.");
         }
     }
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import Input from '../../../components/Input';
 import { Button } from '../../../components/Button';
@@ -17,11 +18,12 @@ const UpdatePassword = () => {
         try {
             if (password === passwordConfirmation) {
                 await UsersService.updatePassword({password: password});
+                toast.success("Password updated succesfully!"); 
             } else {
-               alert("passwords don't match"); 
+               toast.error("Passwords don't match. Try again."); 
             }
         } catch (error) {
-            alert(error);
+            toast.error("An error has occurred. Please, try again.");
         }
         
     }
