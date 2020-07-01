@@ -22,8 +22,3 @@ export const Container = styled.div`
         max-width: 1290px;
     }
 `;
-
-export const Section = styled.section`
-    background-color: #694ED8;
-    height: calc(100% - 64px);
-`;

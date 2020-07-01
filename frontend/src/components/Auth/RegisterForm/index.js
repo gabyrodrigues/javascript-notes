@@ -15,7 +15,7 @@ const RegisterForm = () => {
 
     const history = useHistory();
 
-    const HandleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
@@ -27,7 +27,7 @@ const RegisterForm = () => {
     }
 
     return (
-        <Form onSubmit={HandleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Input 
                 label="Name: "
                 fontSize={14}

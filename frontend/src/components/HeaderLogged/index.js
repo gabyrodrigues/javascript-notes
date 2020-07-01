@@ -41,7 +41,7 @@ const HeaderLogged = (props) => {
 		setActive(!active);
     }
 
-    async function logout (e) {
+    async function logout () {
         await UsersService.logout();
         history.push('/');
     }

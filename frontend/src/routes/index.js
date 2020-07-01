@@ -7,7 +7,7 @@ import Login from '../pages/Auth/Login';
 import Register from '../pages/Auth/Register';
 import Home from '../pages/Home';
 import Notes from '../pages/Notes';
-import Profile from '../pages/Profile';
+import ProfilePage from '../pages/Profile';
 
 const Routes = () => {
 	return (
@@ -17,7 +17,7 @@ const Routes = () => {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/notes" component={Notes} isPrivate />
-                <Route path="/profile" component={Profile} isPrivate />
+                <Route path="/profile" component={ProfilePage} isPrivate />
             </Switch>
 		</BrowserRouter>
 	);

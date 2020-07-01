@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Profile = () => {
+import HeaderLogged from '../../components/HeaderLogged';
+import Profile from '../../components/Profile';
+
+const ProfilePage = () => {
     return (
         <>
-            <h1>Profile</h1>
+            <HeaderLogged />
+            <Profile />
         </>
     );
 }
 
-export default Profile;
+export default ProfilePage;

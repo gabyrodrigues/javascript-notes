@@ -15,7 +15,7 @@ const LoginForm = () => {
 
     const history = useHistory();
 
-    const HandleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
@@ -27,7 +27,7 @@ const LoginForm = () => {
     }
 
     return (
-        <Form onSubmit={HandleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Input 
                 label="Email: "
                 fontSize={14}

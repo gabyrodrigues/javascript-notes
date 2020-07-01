@@ -2,13 +2,11 @@ import React from 'react';
 
 import * as S from './styles';
 
-const Container = ({ children }) => {
+const Container = ({ children, ...rest }) => {
     return (
-        <S.Section>
-            <S.Container>
-                {children}
-            </S.Container>
-        </S.Section>
+        <S.Container {...rest}>
+            {children}
+        </S.Container>
     );
 }
 
