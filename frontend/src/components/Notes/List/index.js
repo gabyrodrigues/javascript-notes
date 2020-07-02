@@ -13,7 +13,7 @@ const NotesList = (props) => {
             </Column>
 
             { props.notes.map((item, key) =>
-                <Item key={key} onClick={() => props.selectNote(item._id)} active={item === props.current_note}>
+                <Item key={key} onClick={() => props.selectNote(item._id)} active={item === props.currentNote}>
                     <Title>
                         {item.title.replace(/(<([^>]+)>)/ig, "").substring(0, 15)}
                     </Title>

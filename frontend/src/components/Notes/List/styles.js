@@ -9,7 +9,12 @@ export const List = styled.div`
 
 export const Item = styled.div`
     background-color: ${props => (props.active ? "#e4e4e4" : "#f5f5f5")};
+    cursor: pointer;
     padding: 15px;
+
+    &:hover {
+        background-color: #e4e4e4;
+    }
 
     &:first-child {
         border-top-left-radius: 4px;
