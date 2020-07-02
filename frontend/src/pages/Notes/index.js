@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import HeaderLogged from '../../components/HeaderLogged';
+import Notes from '../../components/Notes';
 
-const Notes = () => {
+const NotesPage = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <>
-            <HeaderLogged />
-            <h1>Notes</h1>
+            <HeaderLogged setIsOpen={setIsOpen} />
+            <Notes setIsOpen={setIsOpen} isOpen={isOpen} />
         </>
     );
 }
 
-export default Notes;
+export default NotesPage;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from '../../components/Button';
 
 export const Navbar = styled.nav`
     align-items: center;
@@ -186,4 +187,9 @@ export const Burger = styled.div`
     @media (min-width: 769px) {
         display: none;
     }
+`;
+
+export const DropButton = styled(Button)`
+    background-color: ${props => (props.dropdownVisible ? '#fff' : '#694ED8') };
+    color: ${props => (props.dropdownVisible ? '#694ED8' : '#fff') };
 `;

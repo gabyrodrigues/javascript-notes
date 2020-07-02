@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faList } from '@fortawesome/free-solid-svg-icons';
 
-import { Burger, Container, Dropdown, DropDivider, DropLink, DropItem, DropMenu, FAAngleIcon, Logo, Info, Item, Menu, Navbar} from './styles';
+import { Burger, Container, Dropdown, DropButton, DropDivider, DropLink, DropItem, DropMenu, FAAngleIcon, Logo, Info, Item, Menu, Navbar} from './styles';
 import { Button } from '../../components/Button';
 
 import UsersService from '../../services/users';
@@ -67,16 +67,16 @@ const HeaderLogged = (props) => {
 
 				<Menu id="navbar-menu" active={active}>
                     <Item>
-                        <Button white>
+                        <Button white onClick={() => props.setIsOpen(true)}> 
                             <FontAwesomeIcon icon={faList} />
                         </Button>
                     </Item>
                     <Item>
                         <Dropdown ref={wrapperRef}>
-                            <Button onClick={handleToggleDropdownVisible} white>
+                            <DropButton dropdownVisible={dropdownVisible} onClick={handleToggleDropdownVisible} white>
                                 <span>{JSON.parse(user)['name']}</span>
                                 <span><FAAngleIcon icon={faAngleDown} /></span>
-                            </Button>
+                            </DropButton>
                             <DropMenu dropdownVisible={dropdownVisible}>
                                 <DropItem>
                                     <DropLink to="/profile">Edit Profile</DropLink>
