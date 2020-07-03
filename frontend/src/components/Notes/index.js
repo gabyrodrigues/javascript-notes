@@ -34,6 +34,11 @@ const Notes = (props) => {
         fetchNotes();
     }
 
+    const deleteNote = async (note) => {
+        await NotesService.delete(note._id);
+        fetchNotes();
+    }
+
     useEffect(() => {
         fetchNotes();
     }, []);
@@ -57,6 +62,7 @@ const Notes = (props) => {
                     selectNote={selectNote}
                     currentNote={currentNote}
                     createNote={createNote}
+                    deleteNote={deleteNote}
                 />
             </NotesMenu>
             <Container id="notes-editor">

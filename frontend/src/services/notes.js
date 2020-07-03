@@ -6,6 +6,9 @@ const NotesService = {
     }),
     create: () => api.post('/notes', { 'title': 'Nota nota', 'body': 'Nova nota' }, {
         headers: { 'x-access-token': localStorage.getItem('token') }
+    }),
+    delete: (id) => api.delete(`/notes/${id}`, {
+        headers: { 'x-access-token': localStorage.getItem('token') }
     })
 }
 

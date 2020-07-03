@@ -31,7 +31,7 @@ const NotesList = (props) => {
                         <Delete>
                             <FAIcon 
                                 icon={faTrash}
-                                // onClick={() => props.deleteNote(item)}
+                                onClick={() => props.deleteNote(item)}
                             />
                         </Delete>
                     </Info>
