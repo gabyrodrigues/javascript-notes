@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'moment';
 
 import { Body, Column, Counter, Date, Delete, FAIcon, Info, Item, List, Title } from './styles';
+import { Button } from '../../Button';
 
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,6 +11,7 @@ const NotesList = (props) => {
         <List>
             <Column>
                 <Counter>{props.notes.length} Notes</Counter>
+                <Button onClick={() => props.createNote()}>Notes +</Button>
             </Column>
 
             { props.notes.map((item, key) =>

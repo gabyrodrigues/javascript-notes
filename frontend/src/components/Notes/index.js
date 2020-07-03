@@ -29,6 +29,11 @@ const Notes = (props) => {
         
     }
 
+    const createNote = async (params) => {
+        await NotesService.create();
+        fetchNotes();
+    }
+
     useEffect(() => {
         fetchNotes();
     }, []);
@@ -51,6 +56,7 @@ const Notes = (props) => {
                     notes={notes}
                     selectNote={selectNote}
                     currentNote={currentNote}
+                    createNote={createNote}
                 />
             </NotesMenu>
             <Container id="notes-editor">
