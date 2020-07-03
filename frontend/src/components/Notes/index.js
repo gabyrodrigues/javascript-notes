@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Container, Content, NotesMenu, Section } from './styles';
 import NotesService from '../../services/notes';
+import Editor from './Editor'
 
 import NotesList from './List';
  
@@ -29,7 +30,7 @@ const Notes = (props) => {
         
     }
 
-    const createNote = async (params) => {
+    const createNote = async () => {
         await NotesService.create();
         fetchNotes();
     }
@@ -37,6 +38,15 @@ const Notes = (props) => {
     const deleteNote = async (note) => {
         await NotesService.delete(note._id);
         fetchNotes();
+    }
+
+    const updateNote = async (oldNote, params) => {
+        const updatedNote = await NotesService.update(oldNote._id, params);
+        const index = notes.indexOf(oldNote); //encontrar a nota para atualizar
+        const newNotes = notes;
+        newNotes[index] = updatedNote.data;
+        setNotes(newNotes);
+        setCurrentNote(updatedNote.data);
     }
 
     useEffect(() => {
@@ -66,7 +76,10 @@ const Notes = (props) => {
                 />
             </NotesMenu>
             <Container id="notes-editor">
-                Editor...
+                <Editor
+                    note={currentNote}
+                    updateNote={updateNote}
+                />
             </Container>
         </Section>
     );
