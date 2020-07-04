@@ -5,6 +5,7 @@ import NotesService from '../../services/notes';
 import Editor from './Editor'
 
 import NotesList from './List';
+import Search from './Search';
  
 const Notes = (props) => {
     const [notes, setNotes] = useState([]);
@@ -49,6 +50,12 @@ const Notes = (props) => {
         setCurrentNote(updatedNote.data);
     }
 
+    const searchNotes = async (query) => {
+        console.log("Search");
+        const response = await NotesService.search(query);
+        setNotes(response.data);
+    }
+
     useEffect(() => {
         fetchNotes();
     }, []);
@@ -65,7 +72,10 @@ const Notes = (props) => {
                 customCrossIcon={false}
             >
                 <Content>
-                    Search...
+                    <Search 
+                        searchNotes={searchNotes}
+                        fetchNotes={fetchNotes}
+                    />
                 </Content>
                 <NotesList 
                     notes={notes}

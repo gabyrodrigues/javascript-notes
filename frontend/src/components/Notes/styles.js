@@ -7,7 +7,8 @@ export const Section = styled.section`
 `;
 
 export const Content = styled.div`
-
+    display: block;
+    margin-bottom: 20px;
 `;
 
 export const Container = styled.div`
