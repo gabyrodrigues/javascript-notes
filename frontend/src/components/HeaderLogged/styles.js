@@ -47,23 +47,26 @@ export const Logo = styled.img`
 
 
 export const Menu = styled.div`
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    padding: 0 20px;
+  display: flex;
+  flex: 1;
+  padding: 0 20px;
 
-    @media (max-width: 768px) {
-        background-color: #694ed8;
-        box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-        display: ${props => (props.active ? 'block' : 'none')};
-        margin: 0 -20px;
-        padding: 10px;
-    }
+  @media (max-width: 768px) {
+    background-color: #694ed8;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    display: ${props => (props.active ? 'block' : 'none')};
+    margin: 0 -20px;
+    padding: 10px;
+  }
 `;
 
 export const Item = styled.div`
-    display: flex;
-    padding: 0 10px;
+  display: flex;
+  padding: 0 10px;
+
+  &:last-of-type {
+    margin-left: auto;
+  }
 `;
 
 export const LinkButton = styled(Link)`

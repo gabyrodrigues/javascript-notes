@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import logo from '../../assets/images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,6 +18,8 @@ const HeaderLogged = (props) => {
   const history = useHistory();
 
   const wrapperRef = useRef(null);
+
+  let location = useLocation();
 
   function handleToggleDropdownVisible() {
     setDropdownVisible(!dropdownVisible);
@@ -66,11 +68,16 @@ const HeaderLogged = (props) => {
         </Info>
 
         <Menu id="navbar-menu" active={active}>
-          <Item>
-            <Button white onClick={() => props.setIsOpen(true)}>
-              <FontAwesomeIcon icon={faList} />
-            </Button>
-          </Item>
+          {
+            location.pathname === "/notes" &&
+            <Item>
+              <Button white onClick={() => props.setIsOpen(true)}>
+                <FontAwesomeIcon icon={faList} />
+              </Button>
+            </Item>
+
+          }
+
           <Item>
             <Dropdown ref={wrapperRef}>
               <DropButton dropdownVisible={dropdownVisible} onClick={handleToggleDropdownVisible} white>
