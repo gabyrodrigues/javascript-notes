@@ -8,73 +8,73 @@ export const List = styled.div`
 `;
 
 export const Item = styled.div`
-    background-color: ${props => (props.active ? "#e4e4e4" : "#f5f5f5")};
-    cursor: pointer;
-    padding: 15px;
+  background-color: ${props => (props.active ? "#e4e4e4" : "#f5f5f5")};
+  cursor: pointer;
+  padding: 15px;
 
-    &:hover {
-        background-color: #e4e4e4;
-    }
+  &:hover {
+    background-color: #e4e4e4;
+  }
 
-    &:first-child {
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-    }
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
 
-    &:not(:last-child) {
-        border-bottom: 1px solid #dbdbdb;
-    }
+  &:not(:last-child) {
+    border-bottom: 1px solid #dbdbdb;
+  }
 `;
 
 export const Column = styled.div`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 15px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px;
 `;
 
 export const Counter = styled.p`
-    color: #363636;
-    font-size: 18px;
-    font-weight: 700;
+  color: #363636;
+  font-size: 18px;
+  font-weight: 700;
 `;
 
 export const Title = styled.h1`
-    color: #363636;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.125;
+  color: #363636;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.125;
 `;
 
 export const Body = styled(Title)`
-    color: #4a4a4a;
-    font-weight: 400;
-    margin-top: 10px;
+  color: #4a4a4a;
+  font-weight: 400;
+  margin-top: 10px;
 `;
 
 export const Date = styled.time`
-    align-items: center;
-    background-color: #363636;
-    border-radius: 5px;
-    color: #fff;
-    display: inline-flex;
-    font-size: 12px;
-    height: 30px;
-    justify-content: center;
-    padding: 5px 10px;
+  align-items: center;
+  background-color: #363636;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 12px;
+  height: 30px;
+  justify-content: center;
+  padding: 5px 10px;
 `;
 
 export const Info = styled.div`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 `;
 
 export const Delete = styled.div`
-    padding: 10px;
+  padding: 10px;
 `;
 
 export const FAIcon = styled(FontAwesomeIcon)`
-    color: #808080;
+  color: #808080;
 `;

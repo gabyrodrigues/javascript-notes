@@ -8,18 +8,18 @@ import Section from '../../../components/Section';
 import CardForm from '../../../components/Auth/CardForm';
 
 const Login = () => {
-    return (
-        <>
-            <Header />
-            <Section>
-                <Container>
-                    <CardForm>
-                        <LoginForm />
-                    </CardForm>
-                </Container>
-            </Section>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Section>
+        <Container>
+          <CardForm>
+            <LoginForm />
+          </CardForm>
+        </Container>
+      </Section>
+    </>
+  );
 }
 
 export default Login;

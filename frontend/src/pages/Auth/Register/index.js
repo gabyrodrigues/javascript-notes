@@ -8,18 +8,18 @@ import Section from '../../../components/Section';
 import CardForm from '../../../components/Auth/CardForm';
 
 const Register = () => {
-    return (
-        <>
-            <Header />
-            <Section>
-                <Container>
-                    <CardForm>
-                        <RegisterForm />
-                    </CardForm>
-                </Container>
-            </Section>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Section>
+        <Container>
+          <CardForm>
+            <RegisterForm />
+          </CardForm>
+        </Container>
+      </Section>
+    </>
+  );
 }
 
 export default Register;

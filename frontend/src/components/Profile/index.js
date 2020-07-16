@@ -9,33 +9,33 @@ import UpdateProfile from './UpdateProfile';
 import DeleteAccount from './DeleteAccount';
 
 const Profile = () => {
-    return (
-        <Section white>
-            <ProfileContainer>
-                <Block>
-                    <Title>Information</Title>
-                    <Card>
-                        <Content>
-                            <UpdateProfile />
-                        </Content>
-                    </Card>
-                </Block>
+  return (
+    <Section white>
+      <ProfileContainer>
+        <Block>
+          <Title>Information</Title>
+          <Card>
+            <Content>
+              <UpdateProfile />
+            </Content>
+          </Card>
+        </Block>
 
-                <Block>
-                    <Title>Password</Title>
-                    <Card>
-                        <Content>
-                            <UpdatePassword />
-                        </Content>
-                    </Card>
-                </Block>
+        <Block>
+          <Title>Password</Title>
+          <Card>
+            <Content>
+              <UpdatePassword />
+            </Content>
+          </Card>
+        </Block>
 
-                <Block>
-                    <DeleteAccount />
-                </Block>
-            </ProfileContainer>
-        </Section>
-    );
+        <Block>
+          <DeleteAccount />
+        </Block>
+      </ProfileContainer>
+    </Section>
+  );
 }
 
 export default Profile;

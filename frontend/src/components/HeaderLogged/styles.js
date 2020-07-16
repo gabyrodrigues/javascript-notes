@@ -4,45 +4,45 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from '../../components/Button';
 
 export const Navbar = styled.nav`
-    align-items: center;
-    background-color: #694ed8;
-    display: block;
-    max-height: 70px;
-    position: relative;
-    z-index: 30;
+  align-items: center;
+  background-color: #694ed8;
+  display: block;
+  max-height: 70px;
+  position: relative;
+  z-index: 30;
 `;
 
 export const Container  = styled.div`
-    align-items: center;
-    display: flex;
-    flex-grow: 0;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 10px 20px;
-    position: relative;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
 
-    @media (max-width: 768px) {
-        display: block;
-    }
+  @media (max-width: 768px) {
+    display: block;
+  }
 
-    @media (min-width: 1025px) {
-        max-width: 1150px;
-    }
+  @media (min-width: 1025px) {
+    max-width: 1150px;
+  }
 
-    @media (min-width: 1440px) {
-        max-width: 1290px;
-    }
+  @media (min-width: 1440px) {
+    max-width: 1290px;
+  }
 `;
 
 export const Info = styled.div`
-    align-items: center;
-    display: flex;
-    flex-shrink: 0;
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
 `;
 
 export const Logo = styled.img`
-    height: 40px;
+  height: 40px;
 `;
 
 
@@ -93,7 +93,7 @@ export const FAAngleIcon = styled(FontAwesomeIcon)`
 `;
 
 export const Dropdown = styled.div`
-    position: relative;  
+    position: relative;
 `;
 
 export const DropDivider = styled.hr`
