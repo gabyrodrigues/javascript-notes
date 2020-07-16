@@ -14,7 +14,7 @@ const CardForm = ({ children }) => {
 
         <S.Description>
           Your notes on the cloud
-                </S.Description>
+        </S.Description>
 
         {children}
       </S.Content>

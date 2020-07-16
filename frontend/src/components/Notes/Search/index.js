@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Block, Button, Input } from './styles';
+import * as S from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,8 +14,8 @@ const Search = (props) => {
   }
 
   return (
-    <Block>
-      <Input
+    <S.Block>
+      <S.Input
         type="text"
         placeholder="Search note..."
         name={query}
@@ -24,7 +24,7 @@ const Search = (props) => {
         onKeyDown={handleKeyDown}
       />
 
-      <Button
+      <S.Button
         onClick={() => {
           props.fetchNotes();
           setQuery('');
@@ -32,8 +32,8 @@ const Search = (props) => {
         title="Cancelar pesquisa"
       >
         <FontAwesomeIcon size="sm" color="#7f7f7f" icon={faTimes} />
-      </Button>
-    </Block>
+      </S.Button>
+    </S.Block>
   );
 }
 

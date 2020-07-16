@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/images/logo.png';
 
-import { Burger, Container, LinkButton, Logo, Info, Item, Menu, Navbar} from './styles';
+import * as S from './styles';
 
 const Header = () => {
 	const [active, setActive] = useState(false);
@@ -13,34 +13,34 @@ const Header = () => {
 	}
 
     return (
-        <Navbar>
-			<Container>
-				<Info>
-					<Link to="/">
-						<Logo src={logo} alt="logo" />
-					</Link>
-					<Burger
-						aria-label="menu" 
-						aria-expanded="false" 
-						data-target="navbar-menu"
-						onClick={handleToggleActive}
-						className={ active && "active" }>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-					</Burger>
-				</Info>
+      <S.Navbar>
+				<S.Container>
+					<S.Info>
+						<Link to="/">
+							<S.Logo src={logo} alt="logo" />
+						</Link>
+						<S.Burger
+							aria-label="menu"
+							aria-expanded="false"
+							data-target="navbar-menu"
+							onClick={handleToggleActive}
+							className={ active && "active" }>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+						</S.Burger>
+					</S.Info>
 
-				<Menu id="navbar-menu" active={active}>
-                    <Item>
-                        <LinkButton to="/register">Register</LinkButton>
-                    </Item>
-                    <Item>
-                        <LinkButton to="/login" className="outlined">Login</LinkButton>
-                    </Item>
-				</Menu>
-			</Container>
-		</Navbar>
+					<S.Menu id="navbar-menu" active={active}>
+						<S.Item>
+							<S.LinkButton to="/register">Register</S.LinkButton>
+						</S.Item>
+						<S.Item>
+							<S.LinkButton to="/login" className="outlined">Login</S.LinkButton>
+						</S.Item>
+					</S.Menu>
+				</S.Container>
+			</S.Navbar>
     );
 }
 

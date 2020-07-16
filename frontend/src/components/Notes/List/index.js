@@ -1,44 +1,44 @@
 import React from 'react';
 import Moment from 'moment';
 
-import { Body, Column, Counter, Date, Delete, FAIcon, Info, Item, List, Title } from './styles';
+import * as S from './styles';
 import { Button } from '../../Button';
 
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const NotesList = (props) => {
   return (
-    <List>
-      <Column>
-        <Counter>{props.notes.length} Notes</Counter>
+    <S.List>
+      <S.Column>
+        <S.Counter>{props.notes.length} Notes</S.Counter>
         <Button onClick={() => props.createNote()}>Notes +</Button>
-      </Column>
+      </S.Column>
 
       {props.notes.map((item, key) =>
-        <Item key={key} onClick={() => props.selectNote(item._id)} active={item === props.currentNote}>
-          <Title>
+        <S.Item key={key} onClick={() => props.selectNote(item._id)} active={item === props.currentNote}>
+          <S.Title>
             {item.title.replace(/(<([^>]+)>)/ig, "").substring(0, 15)}
-          </Title>
-          <Body>
+          </S.Title>
+          <S.Body>
             {item.body.replace(/(<([^>]+)>)/ig, "").substring(0, 30)}
             {/* remove tags html */}
-          </Body>
+          </S.Body>
 
-          <Info>
-            <Date>
+          <S.Info>
+            <S.Date>
               {Moment(item.created_at).format('DD/MM')}
-            </Date>
-            <Delete>
-              <FAIcon
+            </S.Date>
+            <S.Delete>
+              <S.FAIcon
                 icon={faTrash}
                 onClick={() => props.deleteNote(item)}
               />
-            </Delete>
-          </Info>
-        </Item>
+            </S.Delete>
+          </S.Info>
+        </S.Item>
       )}
 
-    </List>
+    </S.List>
   );
 }
 

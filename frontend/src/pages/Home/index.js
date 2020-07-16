@@ -7,7 +7,7 @@ import Container from '../../components/Container';
 import Section from '../../components/Section';
 
 
-import { Column, Img, LinkButton, Subtitle, Title } from './styles';
+import * as S from './styles';
 
 const Home = () => {
   return (
@@ -15,21 +15,21 @@ const Home = () => {
       <Header />
       <Section>
         <Container>
-          <Column>
-            <Title>
+          <S.Column>
+            <S.Title>
               Create notes easily and access when you wants on the cloud
-                        </Title>
-            <Subtitle>
+            </S.Title>
+            <S.Subtitle>
               Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.
               Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
-                        </Subtitle>
-            <LinkButton to="/register">
+            </S.Subtitle>
+            <S.LinkButton to="/register">
               Register for free now
-                        </LinkButton>
-          </Column>
-          <Column>
-            <Img src={presentationImage} alt="Javascript Notes" />
-          </Column>
+            </S.LinkButton>
+          </S.Column>
+          <S.Column>
+            <S.Img src={presentationImage} alt="Javascript Notes" />
+          </S.Column>
         </Container>
       </Section>
     </>

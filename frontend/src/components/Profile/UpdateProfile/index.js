@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import Input from '../../../components/Input';
 import { Button } from '../../../components/Button';
 
-import { Control, Form } from './styles';
+import * as S from './styles';
 
 import UsersService from '../../../services/users';
 
@@ -35,7 +35,7 @@ const UpdateProfile = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmitUser}>
+    <S.Form onSubmit={handleSubmitUser}>
       <Input
         label="Full Name"
         fontSize={16}
@@ -60,10 +60,10 @@ const UpdateProfile = () => {
         onChange={e => setEmail(e.target.value)}
       />
 
-      <Control>
+      <S.Control>
         <Button type="submit">Update</Button>
-      </Control>
-    </Form>
+      </S.Control>
+    </S.Form>
   );
 }
 

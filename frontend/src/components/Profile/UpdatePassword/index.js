@@ -6,7 +6,7 @@ import { Button } from '../../../components/Button';
 
 import UsersService from '../../../services/users';
 
-import { Control, Form } from './styles';
+import * as S from './styles';
 
 const UpdatePassword = () => {
   const [password, setPassword] = useState('');
@@ -29,7 +29,7 @@ const UpdatePassword = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmitPassword}>
+    <S.Form onSubmit={handleSubmitPassword}>
       <Input
         label="Password"
         fontSize={16}
@@ -54,10 +54,10 @@ const UpdatePassword = () => {
         onChange={e => setPasswordConfirmation(e.target.value)}
       />
 
-      <Control>
+      <S.Control>
         <Button type="submit">Update Password</Button>
-      </Control>
-    </Form>
+      </S.Control>
+    </S.Form>
   );
 }
 

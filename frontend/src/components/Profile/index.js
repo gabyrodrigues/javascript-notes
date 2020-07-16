@@ -1,5 +1,5 @@
 import React from 'react';
-import { Block, Card, ProfileContainer, Content, Title } from './styles';
+import * as S from './styles';
 
 import Section from '../../components/Section';
 
@@ -11,29 +11,29 @@ import DeleteAccount from './DeleteAccount';
 const Profile = () => {
   return (
     <Section white>
-      <ProfileContainer>
-        <Block>
-          <Title>Information</Title>
-          <Card>
-            <Content>
+      <S.ProfileContainer>
+        <S.Block>
+          <S.Title>Information</S.Title>
+          <S.Card>
+            <S.Content>
               <UpdateProfile />
-            </Content>
-          </Card>
-        </Block>
+            </S.Content>
+          </S.Card>
+        </S.Block>
 
-        <Block>
-          <Title>Password</Title>
-          <Card>
-            <Content>
+        <S.Block>
+          <S.Title>Password</S.Title>
+          <S.Card>
+            <S.Content>
               <UpdatePassword />
-            </Content>
-          </Card>
-        </Block>
+            </S.Content>
+          </S.Card>
+        </S.Block>
 
-        <Block>
+        <S.Block>
           <DeleteAccount />
-        </Block>
-      </ProfileContainer>
+        </S.Block>
+      </S.ProfileContainer>
     </Section>
   );
 }

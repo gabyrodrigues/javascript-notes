@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faList } from '@fortawesome/free-solid-svg-icons';
 
-import { Burger, Container, Dropdown, DropButton, DropDivider, DropLink, DropItem, DropMenu, FAAngleIcon, Logo, Info, Item, Menu, Navbar } from './styles';
+import * as S from './styles';
 import { Button } from '../../components/Button';
 
 import UsersService from '../../services/users';
@@ -49,13 +49,13 @@ const HeaderLogged = (props) => {
   }
 
   return (
-    <Navbar>
-      <Container>
-        <Info>
+    <S.Navbar>
+      <S.Container>
+        <S.Info>
           <Link to="/">
-            <Logo src={logo} alt="logo" />
+            <S.Logo src={logo} alt="logo" />
           </Link>
-          <Burger
+          <S.Burger
             aria-label="menu"
             aria-expanded="false"
             data-target="navbar-menu"
@@ -64,45 +64,44 @@ const HeaderLogged = (props) => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
-          </Burger>
-        </Info>
+          </S.Burger>
+        </S.Info>
 
-        <Menu id="navbar-menu" active={active}>
+        <S.Menu id="navbar-menu" active={active}>
           {
             location.pathname === "/notes" &&
-            <Item>
+            <S.Item>
               <Button white onClick={() => props.setIsOpen(true)}>
                 <FontAwesomeIcon icon={faList} />
               </Button>
-            </Item>
-
+            </S.Item>
           }
 
-          <Item>
-            <Dropdown ref={wrapperRef}>
-              <DropButton dropdownVisible={dropdownVisible} onClick={handleToggleDropdownVisible} white>
+          <S.Item>
+            <S.Dropdown ref={wrapperRef}>
+              <S.DropButton dropdownVisible={dropdownVisible} onClick={handleToggleDropdownVisible} white>
                 <span>{JSON.parse(user)['name']}</span>
-                <span><FAAngleIcon icon={faAngleDown} /></span>
-              </DropButton>
-              <DropMenu dropdownVisible={dropdownVisible}>
-                <DropItem>
-                  <DropLink to="/profile">Edit Profile</DropLink>
-                </DropItem>
+                <span><S.FAAngleIcon icon={faAngleDown} /></span>
+              </S.DropButton>
+              <S.DropMenu dropdownVisible={dropdownVisible}>
+                <S.DropItem>
+                  <S.DropLink to="/profile">Edit Profile</S.DropLink>
+                </S.DropItem>
 
-                <DropDivider />
+                <S.DropDivider />
 
-                <DropItem>
+                <S.DropItem>
                   <Button onClick={e => logout()}>
                     Logout
-                                    </Button>
-                </DropItem>
-              </DropMenu>
-            </Dropdown>
+                  </Button>
+                </S.DropItem>
+              </S.DropMenu>
+            </S.Dropdown>
 
-          </Item>
-        </Menu>
-      </Container>
-    </Navbar>
+          </S.Item>
+        </S.Menu>
+      </S.Container>
+    </S.Navbar>
   );
 }
 

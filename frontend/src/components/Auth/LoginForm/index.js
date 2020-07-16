@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { Actions, Form, Help } from './styles';
+import * as S from './styles';
 
 import { Button } from '../../../components/Button';
 import Input from '../../../components/Input';
@@ -27,7 +27,7 @@ const LoginForm = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <S.Form onSubmit={handleSubmit}>
       <Input
         label="Email: "
         fontSize={14}
@@ -52,13 +52,13 @@ const LoginForm = () => {
         onChange={e => setPassword(e.target.value)}
       />
 
-      <Actions>
+      <S.Actions>
         <Link to="/register">Register or</Link>
         <Button type="submit">Login</Button>
-      </Actions>
+      </S.Actions>
 
-      {error && <Help color="danger">Email or Password invalid</Help>}
-    </Form>
+      {error && <S.Help color="danger">Email or Password invalid</S.Help>}
+    </S.Form>
   );
 }
 
